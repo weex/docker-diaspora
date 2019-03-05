@@ -10,7 +10,9 @@ This image is automatically built by [GitLab CI](https://gitlab.com/angristan/do
 
 **Not updated any more by the originator (forked from angristan/docker-diaspora): I won't update this image anymore. Feel free to open PRs or to fork the repo.**
 
-
+05/03/2019:
+  - updated to 0.7.10.0
+  - added libjemalloc-dev for improving memory usage
 
 ## Features
 
