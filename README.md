@@ -22,7 +22,7 @@
 
 ### Build-time variables
 
-- **`DIASPORA_VER`**: Diaspora version (`0.7.9.0`)
+- **`DIASPORA_VER`**: Diaspora version (`0.7.10.0`)
 - **`GID`**: group id *(default: `942`)*
 - **`UID`**: user id *(default: `942`)*
 
@@ -76,7 +76,7 @@ services:
 
   unicorn:
     container_name: diaspora_unicorn
-    image: angristan/diaspora:0.7.9
+    image: ultrahang/diaspora:0.7.10
     restart: always
     command: bin/bundle exec unicorn -c config/unicorn.rb -E production
     volumes:
@@ -89,7 +89,7 @@ services:
 
   sidekiq:
     container_name: diaspora_sidekiq
-    image: angristan/diaspora:0.7.9
+    image: ultrahang/diaspora:0.7.10
     restart: always
     command: bin/bundle exec sidekiq
     volumes:
