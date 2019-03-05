@@ -8,7 +8,9 @@
 
 This image is automatically built by [GitLab CI](https://gitlab.com/angristan/docker-diaspora/pipelines) and pushed to the [Docker Hub](https://hub.docker.com/r/angristan/diaspora/).
 
-**I won't update this image anymore. Feel free to open PRs or to fork the repo.**
+**Not updated any more by the originator (forked from angristan/docker-diaspora): I won't update this image anymore. Feel free to open PRs or to fork the repo.**
+
+
 
 ## Features
 
