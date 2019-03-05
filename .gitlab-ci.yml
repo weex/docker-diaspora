@@ -1,11 +1,11 @@
 image: docker:stable
 
 variables:
-  LATEST_VER: angristan/diaspora:latest
-  MAJOR_VER: angristan/diaspora:0
-  MINOR_VER: angristan/diaspora:0.7
-  PATCH_VER: angristan/diaspora:0.7.9
-  REV_VER: angristan/diaspora:0.7.9.0
+  LATEST_VER: ultrahang/diaspora:latest
+  MAJOR_VER: ultrahang/diaspora:0
+  MINOR_VER: ultrahang/diaspora:0.7
+  PATCH_VER: ultrahang/diaspora:0.7.10
+  REV_VER: ultrahang/diaspora:0.7.10.0
 
 stages:
   - Build image
