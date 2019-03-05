@@ -3,7 +3,7 @@ FROM ruby:2.4-slim-stretch
 LABEL maintainer="angristan"
 LABEL source="https://github.com/angristan/docker-diaspora"
 
-ARG DIASPORA_VER=0.7.9.0
+ARG DIASPORA_VER=0.7.10.0
 
 ENV RAILS_ENV=production \
     UID=942 \
@@ -25,6 +25,7 @@ RUN apt-get update \
     libpq-dev \
     nodejs \
     wget \
+    libjemalloc-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN addgroup --GID ${GID} diaspora \
