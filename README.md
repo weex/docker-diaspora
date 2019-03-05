@@ -1,5 +1,6 @@
 # Diaspora*
 
+[![pipeline status](https://gitlab.com/ultrahang/docker-diaspora/badges/master/pipeline.svg)](https://gitlab.com/ultrahang/docker-diaspora/pipelines) ![https://hub.docker.com/u/ultrahang/diaspora/](https://img.shields.io/microbadger/image-size/angristan/diaspora.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/u/ultrahang/diaspora/](https://img.shields.io/microbadger/layers/angristan/diaspora.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/u/ultrahang/diaspora/](https://img.shields.io/docker/pulls/angristan/diaspora.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/u/ultrahang/diaspora/](https://img.shields.io/docker/stars/angristan/diaspora.svg?maxAge=3600&style=flat-square)
 
 ![Diaspora Logo](https://i.imgur.com/J50tnoC.png)
 
