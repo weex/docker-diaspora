@@ -28,7 +28,7 @@ docker push:
   - master
   script:
   - echo "$REGISTRY_PASSWORD" | docker login -u "$REGISTRY_USER" --password-stdin
-  - docker push $LATEST_VER && docker image rm $LATEST_VER
+  - docker push "$LATEST_VER" && docker image rm "$LATEST_VER
   - docker push $MAJOR_VER && docker image rm $MAJOR_VER
   - docker push $MINOR_VER && docker image rm $MINOR_VER
   - docker push $PATCH_VER && docker image rm $PATCH_VER
