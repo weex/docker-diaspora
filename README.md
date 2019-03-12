@@ -1,14 +1,12 @@
 # Diaspora*
 
-[![pipeline status](https://gitlab.com/ultrahang/docker-diaspora/badges/master/pipeline.svg)](https://gitlab.com/ultrahang/docker-diaspora/pipelines) ![https://hub.docker.com/u/ultrahang/diaspora/](https://img.shields.io/microbadger/image-size/angristan/diaspora.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/u/ultrahang/diaspora/](https://img.shields.io/microbadger/layers/angristan/diaspora.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/u/ultrahang/diaspora/](https://img.shields.io/docker/pulls/angristan/diaspora.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/u/ultrahang/diaspora/](https://img.shields.io/docker/stars/angristan/diaspora.svg?maxAge=3600&style=flat-square)
-
 ![Diaspora Logo](https://i.imgur.com/J50tnoC.png)
 
 [Diaspora](https://diasporafoundation.org/) is a nonprofit, user-owned, distributed social network that is based upon the free Diaspora software. Diaspora consists of a group of independently owned nodes (called pods) which interoperate to form the network.
 
-* THIS FORK IS NOT YET ON DOCKER.COM. This image is automatically built by [GitLab CI](https://gitlab.com/ultrahang/docker-diaspora/pipelines) and pushed to the [Docker Hub](https://hub.docker.com/u/ultrahang/diaspora/).
+[Docker Hub](https://hub.docker.com/u/ultrahang/diaspora/).
 
-**Not updated any more by the originator (forked from angristan/docker-diaspora): I won't update this image anymore. Feel free to open PRs or to fork the repo.**
+**forked from angristan/docker-diaspora which is not updated any more by the originator 
 
 05/03/2019:
   - updated to 0.7.10.0
