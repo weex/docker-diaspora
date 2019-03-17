@@ -4,9 +4,9 @@
 
 [Diaspora](https://diasporafoundation.org/) is a nonprofit, user-owned, distributed social network that is based upon the free Diaspora software. Diaspora consists of a group of independently owned nodes (called pods) which interoperate to form the network.
 
-[Docker Hub](https://hub.docker.com/u/ultrahang/diaspora/).
+ **Automated build of the image can be found on the [Docker Hub](https://hub.docker.com/u/ultrahang/diaspora/).**
 
-**forked from angristan/docker-diaspora which is not updated any more by the originator 
+ **forked from angristan/docker-diaspora which is not updated any more by the original maintainer**
 
 05/03/2019:
   - updated to 0.7.10.0
@@ -30,25 +30,25 @@
 
 ## Usage
 
-The image will not work *as-is*, it requires a command to start and other services.
+The image can work *as-is* using the provided docker-compose.yml, diaspora.yml, database.yml, nginx-vhost.conf configuration files. 
+
+It is recommended to change at least the diaspora.yml in order to get it work in production environment - otherwise it listens on http://localhost .
+
 
 ### Configuration files
 
-**Before** doing anything, copy the [database.yml.exemple](https://github.com/diaspora/diaspora/blob/develop/config/database.yml.example) to your current folder and add the correct values (which should be the postgres ENVIRONMENT viariables below).
+**Before** doing anything, modify the **database.yml** as per your needs in case you use different database setup. The included **docker-compose.yml** uses a standalone postgress container for the database.
 
-Do the same with [diaspora.yml.example](https://github.com/diaspora/diaspora/blob/develop/config/diaspora.yml.example) and **read it** completely. Diaspora won't work with the defaults.
+Do the same with **diaspora.yml** and **read it** completely. Diaspora starts on localhost with the provided defaults.
 
 FYI you will need to modify these at least:
 
 - environment.url
-- environment.certificate_authorities: `/etc/ssl/certs/ca-certificates.crt`
-- environment.redis: `redis://redis` (if you follow the docker-compose below)
-- server.listen: `0.0.0.0:3000`
 - server.rails_environment: `production`
 
 ### Docker Compose
 
-Here is an exemple `docker-compose.yml`:
+Here is the included `docker-compose.yml`:
 
 ```yaml
 version: '2.3'
@@ -111,7 +111,7 @@ services:
 
 We need a Nginx container to server the uploads and assets, as Unicorn doesn't do it.
 
-Here is an example Nginx vhost:
+Here is the example Nginx vhost configuration file with no SSL support:
 
 ```nginx
 server {
@@ -161,6 +161,10 @@ You can now lauch your pod!
 ```sh
 docker-compose up -d
 ```
+
+You can check your Diaspora installation on the http://localhost with no modification on the configuraiton files. To set the administrator account follow the [Official FAQ instructions](https://wiki.diasporafoundation.org/FAQ_for_pod_maintainers#What_are_roles_and_how_do_I_use_them.3F_.2F_Make_yourself_an_admin_or_assign_moderators) after creating an account on the site.
+
+
 
 ### Update
 
