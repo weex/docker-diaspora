@@ -1,10 +1,6 @@
 image: docker:stable
 
 variables:
-  LATEST_VER: ultrahang/diaspora:latest
-  MAJOR_VER: ultrahang/diaspora:0
-  MINOR_VER: ultrahang/diaspora:0.7
-  PATCH_VER: ultrahang/diaspora:0.7.10
   REV_VER: ultrahang/diaspora:0.7.10.0
   DOCKER_HOST: tcp://docker:2375
 
@@ -13,23 +9,12 @@ services:
 
 stages:
   - Build image
-  - Push to Docker Hub
-
 docker build:
   image: docker:stable
   stage: Build image
   script:
   - docker info
-  - docker build -t $LATEST_VER -t $MAJOR_VER -t $MINOR_VER -t $PATCH_VER -t $REV_VER .
-
-docker push:
-  stage: Push to Docker Hub
-  only:
-  - master
-  script:
+  - docker build -t $REV_VER .
   - echo "$REGISTRY_PASSWORD" | docker login -u "$REGISTRY_USER" --password-stdin
-  - docker push "$LATEST_VER" && docker image rm "$LATEST_VER"
-  - docker push $MAJOR_VER && docker image rm $MAJOR_VER
-  - docker push $MINOR_VER && docker image rm $MINOR_VER
-  - docker push $PATCH_VER && docker image rm $PATCH_VER
-  - docker push $REV_VER && docker image rm $REV_VER
+  - docker push $REV_VER && docker image rm $REV_VER  
+
