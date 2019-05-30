@@ -9,7 +9,7 @@
  **forked from angristan/docker-diaspora which is not updated any more by the original maintainer**
 
 
-  - updated to 0.7.11.0
+  - updated to 0.7.12.0
   - added libjemalloc-dev for improving memory usage
 
 ## Features
@@ -20,7 +20,7 @@
 
 ### Build-time variables
 
-- **`DIASPORA_VER`**: Diaspora version (`0.7.11.0`)
+- **`DIASPORA_VER`**: Diaspora version (`0.7.12.0`)
 - **`GID`**: group id *(default: `942`)*
 - **`UID`**: user id *(default: `942`)*
 
