@@ -9,7 +9,7 @@
  **forked from angristan/docker-diaspora which is not updated any more by the original maintainer**
 
 
-  - updated to 0.8.0.0
+  - updated to 0.7.12.0
   - added libjemalloc-dev for improving memory usage
 
 ## Features
