@@ -36,7 +36,8 @@ RUN addgroup --GID ${GID} diaspora \
 USER diaspora
 
 WORKDIR /diaspora
-RUN git clone -b master https://github.com/diaspora/diaspora.git
+RUN git clone --depth 1 -b master https://github.com/diaspora/diaspora.git diaspora
+RUN rm -fr diaspora/.git
 RUN mv /diaspora/diaspora/* /diaspora/
 RUN mkdir /diaspora/log \
     && cp config/database.yml.example config/database.yml
