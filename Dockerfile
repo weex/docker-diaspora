@@ -16,7 +16,7 @@ RUN apt-get update \
 
 
 FROM ruby:2.4-slim-stretch
-ARG DIASPORA_VER=0.8.0.0
+ARG DIASPORA_VER=0.7.12.0
 
 ENV RAILS_ENV=production \
     UID=942 \
