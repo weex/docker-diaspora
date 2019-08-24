@@ -1,6 +1,4 @@
 .git
-.gitlab-ci.yml
 LICENSE
 README.md
-data
-postgres
+docker-compose
