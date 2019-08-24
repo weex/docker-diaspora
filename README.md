@@ -17,7 +17,7 @@
 
 ### Build-time variables
 
-- **`DIASPORA_VER`**: Diaspora version (`0.8.0.0`)
+- **`DIASPORA_VER`**: Diaspora version (`0.7.12.0`)
 - **`GID`**: group id *(default: `942`)*
 - **`UID`**: user id *(default: `942`)*
 
