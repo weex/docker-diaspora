@@ -6,7 +6,7 @@
 
  **Automated build of the image can be found on the [Docker Hub](https://hub.docker.com/u/nikkoura/diaspora/).**
 
- **forked from ultrahang/docker-diaspora**
+ **forked from [ultrahang/docker-diaspora](https://github.com/ultrahang/docker-diaspora)**
 
 ## Features
 
@@ -67,7 +67,13 @@ We need a Nginx container to server the uploads and assets, as Unicorn doesn't d
 
 ### Installation
 
-When running the instance for the first time, run this command to setup the database:
+When running the instance for the first time, run this command to initialize the postgres instance:
+
+```sh
+docker-compose up -d postgres
+```
+
+Allow a few minutes for the instance to initialize and settle, then create the schema:
 
 ```sh
 docker-compose run --rm unicorn initdb

@@ -31,7 +31,7 @@ services:
       - redis
     environment:
       - DIASPORADB_TYPE=postgresql
-      - DIASPORADB_POSTGRESQL_HOST=localhost
+      - DIASPORADB_POSTGRESQL_HOST=postgres
       - DIASPORADB_POSTGRESQL_USER=diaspora
       - DIASPORADB_POSTGRESQL_PASSWORD=diaspora
 
@@ -39,7 +39,7 @@ services:
     container_name: diaspora_sidekiq
     image: nikkoura/diaspora:0.7.12.0
     restart: always
-    command: bin/bundle exec sidekiq
+    command: sidekiq
     volumes:
       - ./data:/diaspora/public/
     depends_on:
@@ -47,7 +47,7 @@ services:
       - redis
     environment:
       - DIASPORADB_TYPE=postgresql
-      - DIASPORADB_POSTGRESQL_HOST=localhost
+      - DIASPORADB_POSTGRESQL_HOST=postgres
       - DIASPORADB_POSTGRESQL_USER=diaspora
       - DIASPORADB_POSTGRESQL_PASSWORD=diaspora
 
