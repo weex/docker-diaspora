@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+
+cd /diaspora/config
+confd --onetime --backend env
+cd /diaspora/
+exec bin/bundle exec sidekiq "$@"

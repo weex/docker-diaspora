@@ -21,29 +21,35 @@ services:
 
   unicorn:
     container_name: diaspora_unicorn
-    image: ultrahang/diaspora:latest
+    image: nikkoura/diaspora:0.7.12.0
+    command: unicorn
     restart: always
-    command: bin/bundle exec unicorn -c config/unicorn.rb -E production
     volumes:
       - ./data:/diaspora/public/
-      - ./diaspora.yml:/diaspora/config/diaspora.yml
-      - ./database.yml:/diaspora/config/database.yml
     depends_on:
       - postgres
       - redis
+    environment:
+      - DIASPORADB_TYPE=postgresql
+      - DIASPORADB_POSTGRESQL_HOST=localhost
+      - DIASPORADB_POSTGRESQL_USER=diaspora
+      - DIASPORADB_POSTGRESQL_PASSWORD=diaspora
 
   sidekiq:
     container_name: diaspora_sidekiq
-    image: ultrahang/diaspora:latest
+    image: nikkoura/diaspora:0.7.12.0
     restart: always
     command: bin/bundle exec sidekiq
     volumes:
       - ./data:/diaspora/public/
-      - ./diaspora.yml:/diaspora/config/diaspora.yml
-      - ./database.yml:/diaspora/config/database.yml
     depends_on:
       - postgres
       - redis
+    environment:
+      - DIASPORADB_TYPE=postgresql
+      - DIASPORADB_POSTGRESQL_HOST=localhost
+      - DIASPORADB_POSTGRESQL_USER=diaspora
+      - DIASPORADB_POSTGRESQL_PASSWORD=diaspora
 
   nginx:
     container_name: diaspora_nginx
@@ -54,4 +60,3 @@ services:
       - ./data:/var/www/html
     ports:
       - 127.0.0.1:80:80
-

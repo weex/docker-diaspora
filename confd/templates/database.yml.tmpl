@@ -1,17 +1,17 @@
 postgresql: &postgresql
   adapter: postgresql
-  host: "postgres"
-  port: 5432
-  username: "diaspora"
-  password: "diaspora"
+  host: "{{getv "/diasporadb/postgresql/host" "localhost"}}"
+  port: {{getv "/diasporadb/postgresql/port" "5432"}}
+  username: "{{getv "/diasporadb/postgresql/user" "diaspora"}}"
+  password: "{{getv "/diasporadb/postgresql/password" "diaspora"}}"
   encoding: unicode
 
 mysql: &mysql
   adapter: mysql2
-  host: "localhost"
-  port: 3306
-  username: "root"
-  password: ""
+  host: "{{getv "/diasporadb/mysql/host" "localhost"}}"
+  port: {{getv "/diasporadb/mysql/port" "3306"}}
+  username: "{{getv "/diasporadb/mysql/user" "root"}}"
+  password: "{{getv "/diasporadb/mysql/password" ""}}"
 #  socket: /tmp/mysql.sock
   encoding: utf8mb4
   collation: utf8mb4_bin
@@ -21,8 +21,13 @@ mysql: &mysql
 # if you want to use mysql
 common: &common
   # Choose one of the following
+  {{if eq (getv "/diasporadb/type" "postgresql") ("postgresql") }}
   <<: *postgresql
   #<<: *mysql
+  {{else if eq (getv "/diasporadb/type" "postgresql") ("mysql")}}
+  #<<: *postgresql
+  <<: *mysql
+  {{end}}
 
   # Should match environment.sidekiq.concurrency
   #pool: 25
