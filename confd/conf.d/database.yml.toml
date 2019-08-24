@@ -1,0 +1,15 @@
+[template]
+src = "database.yml.tmpl"
+dest = "database.yml"
+
+keys = [
+  "diasporadb/type",
+  "diasporadb/postgresql/user",
+  "diasporadb/postgresql/password",
+  "diasporadb/postgresql/host",
+  "diasporadb/postgresql/port",
+  "diasporadb/mysql/user",
+  "diasporadb/mysql/password",
+  "diasporadb/mysql/host",
+  "diasporadb/mysql/port",
+]
