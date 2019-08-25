@@ -1,17 +1,17 @@
 postgresql: &postgresql
   adapter: postgresql
-  host: "{{getv "/diasporadb/postgresql/host" "localhost"}}"
-  port: {{getv "/diasporadb/postgresql/port" "5432"}}
-  username: "{{getv "/diasporadb/postgresql/user" "diaspora"}}"
-  password: "{{getv "/diasporadb/postgresql/password" "diaspora"}}"
+  host: "{{getv "/db/host" "postgres"}}"
+  port: {{getv "/db/port" "5432"}}
+  username: "{{getv "/db/user" "diaspora"}}"
+  password: "{{getv "/db/password" "diaspora"}}"
   encoding: unicode
 
 mysql: &mysql
   adapter: mysql2
-  host: "{{getv "/diasporadb/mysql/host" "localhost"}}"
-  port: {{getv "/diasporadb/mysql/port" "3306"}}
-  username: "{{getv "/diasporadb/mysql/user" "root"}}"
-  password: "{{getv "/diasporadb/mysql/password" ""}}"
+  host: "{{getv "/db/host" "mysql"}}"
+  port: {{getv "/db/port" "3306"}}
+  username: "{{getv "/db/user" "root"}}"
+  password: "{{getv "/db/password" ""}}"
 #  socket: /tmp/mysql.sock
   encoding: utf8mb4
   collation: utf8mb4_bin
@@ -21,10 +21,10 @@ mysql: &mysql
 # if you want to use mysql
 common: &common
   # Choose one of the following
-  {{if eq (getv "/diasporadb/type" "postgresql") ("postgresql") }}
+  {{if eq (getv "/db/type" "postgresql") ("postgresql") }}
   <<: *postgresql
   #<<: *mysql
-  {{else if eq (getv "/diasporadb/type" "postgresql") ("mysql")}}
+  {{else if eq (getv "/db/type" "postgresql") ("mysql")}}
   #<<: *postgresql
   <<: *mysql
   {{end}}

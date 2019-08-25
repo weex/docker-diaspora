@@ -1,0 +1,10 @@
+[template]
+src = "database.yml.tmpl"
+dest = "database.yml"
+
+keys = [
+  "db/type",
+  "db/user",
+  "db/password",
+  "db/host",
+]

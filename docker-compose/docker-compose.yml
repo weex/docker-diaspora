@@ -30,10 +30,10 @@ services:
       - postgres
       - redis
     environment:
-      - DIASPORADB_TYPE=postgresql
-      - DIASPORADB_POSTGRESQL_HOST=postgres
-      - DIASPORADB_POSTGRESQL_USER=diaspora
-      - DIASPORADB_POSTGRESQL_PASSWORD=diaspora
+      - DB_TYPE=postgresql
+      - DB_HOST=postgres
+      - DB_USER=diaspora
+      - DB_PASSWORD=diaspora
 
   sidekiq:
     container_name: diaspora_sidekiq
@@ -46,10 +46,10 @@ services:
       - postgres
       - redis
     environment:
-      - DIASPORADB_TYPE=postgresql
-      - DIASPORADB_POSTGRESQL_HOST=postgres
-      - DIASPORADB_POSTGRESQL_USER=diaspora
-      - DIASPORADB_POSTGRESQL_PASSWORD=diaspora
+      - DB_TYPE=postgresql
+      - DB_HOST=postgres
+      - DB_USER=diaspora
+      - DB_PASSWORD=diaspora
 
   nginx:
     container_name: diaspora_nginx
