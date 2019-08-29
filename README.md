@@ -32,9 +32,9 @@
 #### Base settings
 See comments in `config/diaspora.yml` for the possible environment variables.
 Here are the critical ones to integrate with the container environment:
-- **`URL`**: diaspora public URL. Do not modify once db has been populated (optional, default= `http://localhost`)
-- **`LISTEN`**: Diaspora 'unicorn' server listener (default= `0.0.0.0:3000`)
-- **`REDIS`**: REDIS url, optionally including user/password (default= `redis://redis`)
+- **`ENVIRONMENT_URL`**: diaspora public URL. Do not modify once db has been populated (optional, default= `http://localhost`)
+- **`SERVER_LISTEN`**: Diaspora 'unicorn' server listener (default= `0.0.0.0:3000`)
+- **`ENVIRONMENT_REDIS`**: REDIS url, optionally including user/password (default= `redis://redis`)
 
 #### Database access
 Database configuration is templated using [confd](http://www.confd.io).
