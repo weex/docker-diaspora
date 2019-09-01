@@ -7,4 +7,5 @@ keys = [
   "db/user",
   "db/password",
   "db/host",
+  "db/port"
 ]
