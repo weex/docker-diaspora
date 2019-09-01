@@ -67,7 +67,7 @@ RUN gem install bundler \
 COPY --chown=root:staff entrypoints/ /usr/local/bin/
 COPY --chown=root:staff config/*.tmpl /etc/confd/templates/
 COPY --chown=root:staff config/*.toml /etc/confd/conf.d/
-COPY --chown=diaspora:diaspora config/*.yml /diaspora/config/
+# COPY --chown=diaspora:diaspora config/*.yml /diaspora/config/
 
 VOLUME /diaspora/public
 LABEL maintainer="nikkoura"
