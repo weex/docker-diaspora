@@ -1,0 +1,9 @@
+[template]
+src = "diaspora.yml.tmpl"
+dest = "diaspora.yml"
+
+keys = [
+  "redis/user",
+  "redis/password",
+  "redis/host",
+]
