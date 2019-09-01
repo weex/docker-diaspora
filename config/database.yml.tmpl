@@ -2,15 +2,15 @@ postgresql: &postgresql
   adapter: postgresql
   host: "{{getv "/db/host" "postgres"}}"
   port: {{getv "/db/port" "5432"}}
-  username: "{{getv "/db/user" "diaspora"}}"
-  password: "{{getv "/db/password" "diaspora"}}"
+  username: "{{getv "/db/user" ""}}"
+  password: "{{getv "/db/password" ""}}"
   encoding: unicode
 
 mysql: &mysql
   adapter: mysql2
   host: "{{getv "/db/host" "mysql"}}"
   port: {{getv "/db/port" "3306"}}
-  username: "{{getv "/db/user" "root"}}"
+  username: "{{getv "/db/user" ""}}"
   password: "{{getv "/db/password" ""}}"
 #  socket: /tmp/mysql.sock
   encoding: utf8mb4
