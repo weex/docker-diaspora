@@ -53,14 +53,14 @@ The following environment variables should be used depending on the db you are u
 - **`DB_TYPE`**: database type. Set to `postgresql` (mandatory)
 - **`DB_HOST`**: db server host (optional, default= `postgres`)
 - **`DB_PORT`**: db server port (optional, default= `5432`)
-- **`DB_USER`**: db server user (optional, default= `diaspora`)
-- **`DB_PASSWORD`**: db server password (optional, default= `diaspora`)
+- **`DB_USER`**: db server user (optional, default= empty)
+- **`DB_PASSWORD`**: db server password (optional, default= empty)
 
 ##### MySQL
 - **`DB_TYPE`**: database type. Set to `mysql` (mandatory)
 - **`DB_HOST`**: db server host (optional, default= `mysql`)
 - **`DB_PORT`**: db server port (optional, default= `3306`)
-- **`DB_USER`**: db server user (optional, default= `root`)
+- **`DB_USER`**: db server user (optional, default= empty)
 - **`DB_PASSWORD`**: db server password (optional, default= empty)
 
 ### Docker Compose
