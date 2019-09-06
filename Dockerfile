@@ -35,6 +35,7 @@ RUN apt-get update \
     libmagickwand-dev \
     git \
     libpq-dev \
+    default-libmysqlclient-dev \
     nodejs \
     wget \
     libjemalloc-dev \
