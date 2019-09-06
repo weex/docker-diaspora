@@ -63,6 +63,7 @@ RUN mkdir /diaspora/log \
 
 RUN gem install bundler \
     && script/configure_bundler \
+    && bin/bundle config --local with postgresql mysql \
     && bin/bundle install --full-index -j$(getconf _NPROCESSORS_ONLN)
 
 COPY --chown=root:staff entrypoints/ /usr/local/bin/
