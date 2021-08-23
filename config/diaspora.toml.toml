@@ -1,6 +1,6 @@
 [template]
-src = "diaspora.yml.tmpl"
-dest = "diaspora.yml"
+src = "diaspora.toml.tmpl"
+dest = "diaspora.toml"
 
 keys = [
   "redis/user",
