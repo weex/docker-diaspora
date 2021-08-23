@@ -15,7 +15,8 @@ RUN apt-get update \
 
 
 
-FROM ruby:2.6-slim-stretch
+FROM ruby:2.4-slim-stretch
+ARG DIASPORA_VER=0.7.12.0
 
 ENV RAILS_ENV=production \
     UID=942 \
@@ -39,7 +40,6 @@ RUN apt-get update \
     wget \
     libjemalloc-dev \
     gosu \
-    libidn11-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN addgroup --GID ${GID} diaspora \
@@ -55,7 +55,7 @@ RUN mkdir -p /etc/confd/templates
 USER diaspora
 
 WORKDIR /diaspora
-RUN git clone --depth 1 https://github.com/c4social/diaspora.git diaspora
+RUN git clone --depth 1 -b v${DIASPORA_VER} https://github.com/diaspora/diaspora.git diaspora
 RUN rm -fr diaspora/.git
 RUN mv /diaspora/diaspora/* /diaspora/
 RUN mkdir /diaspora/log \
@@ -72,5 +72,5 @@ COPY --chown=root:staff config/*.toml /etc/confd/conf.d/
 # COPY --chown=diaspora:diaspora config/*.yml /diaspora/config/
 
 VOLUME /diaspora/public
-LABEL maintainer="weex"
-LABEL source="https://github.com/c4social/docker-diaspora"
+LABEL maintainer="nikkoura"
+LABEL source="https://github.com/nikkoura/docker-diaspora"
