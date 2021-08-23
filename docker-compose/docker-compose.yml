@@ -21,7 +21,7 @@ services:
 
   unicorn:
     container_name: diaspora_unicorn
-    image: nikkoura/diaspora:0.7.12.0
+    image: dsterry/diaspora
     command: unicorn
     restart: always
     volumes:
@@ -37,7 +37,7 @@ services:
 
   sidekiq:
     container_name: diaspora_sidekiq
-    image: nikkoura/diaspora:0.7.12.0
+    image: dsterry/diaspora
     restart: always
     command: sidekiq
     volumes:
