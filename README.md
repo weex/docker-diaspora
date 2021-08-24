@@ -87,7 +87,6 @@ docker-compose run --rm unicorn initdb
 Make the data dir and set permissions
 
 ```sh
-mkdir data
 sudo chown -R 942:942 data
 ```
 
